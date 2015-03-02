@@ -10,8 +10,28 @@
         height: 600px;
       }
     </style>
-    
-      
+    <script type="text/javascript">
+
+		var lattext ;
+		if(navigator.appName.search('Microsoft')>-1) { lattext = new ActiveXObject('MSXML2.XMLHTTP'); }
+		else { lattext = new XMLHttpRequest(); }
+			
+			lattext.open('get', 'latitud.txt', true); 
+			lattext.send(null);
+			
+	
+	</script>
+      <script type="text/javascript">
+
+		var longtext ;
+		if(navigator.appName.search('Microsoft')>-1) { longtext = new ActiveXObject('MSXML2.XMLHTTP'); }
+		else { longtext = new XMLHttpRequest(); }
+			
+			longtext.open('get', 'longitud.txt', true); 
+			longtext.send(null);
+			
+	
+	</script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
       function initialize() {
@@ -19,8 +39,8 @@
 
 /*variables incluidas*/
 
-        var lat   = 10.9884292;
-        var long  = -74.8109141;
+        var lat   = lattext.responseText;
+        var long  = longtext.responseText;
         var mapZoom   = 16;
 
 /*Fin variables entrada*/
@@ -146,7 +166,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
     <h1>Sistema de Geolocalización de un Vehiculo.</h1>
     <p align="center">Diseño de un sistema de telemetría de un vehiculo, donde se monitorea la ubicación del vehiculo a través de un modem GPS referencia Syrus, y a su vez se muestra su posición mediante el uso de la API de Google Maps.</p>
     <h2 align="center">Mapa de Ubicación.</h2>
-       
+     
     <div id="map-canvas">
       <div align="center"></div>
     </div>

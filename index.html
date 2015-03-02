@@ -5,59 +5,47 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style>
       #map-canvas {
-        width: 875px;
+        width: 965px;
         height: 600px;
       }
     </style>
+    
+    <script type="text/javascript">
+    
+	latitud = fopen(getScriptPath("latitud.txt"), 0)
+	tamLatitud = flength(latitud); 
+	content = fread(latitud)
+	
+	longitud = fopen(getScriptPath("longitud.txt"), 0)
+	tamLongitud = flength(longitud); 
+	content2 = fread(longitud)
+	
+	</script>
+    
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script language="JavaScript">
-<!--//
-function loadworddoc(){
-var doc = new ActiveXObject("Word.Application"); // creates the word object
-doc.Visible=false; // doesn't display Word window
-doc.Documents.Open("latitud.txt"); // specify path to
-document
-//copy the content from my word document and throw it into my variable
-var latitud;
-latitud = doc.Documents("latitud.txt").Content;
-document.all.myarea.value = latitud;
-doc.quit(0); // quit word (very important or you'll quickly chew up memory!)
-}
-
-<!--//
-function loadworddoc(){
-var doc = new ActiveXObject("Word.Application"); // creates the word object
-doc.Visible=false; // doesn't display Word window
-doc.Documents.Open("longitud.txt"); // specify path to
-document
-//copy the content from my word document and throw it into my variable
-var longitud;
-longitud = doc.Documents("longitud.txt").Content;
-document.all.myarea.value = longitud;
-doc.quit(0); // quit word (very important or you'll quickly chew up memory!)
-}
-
+    <script>
       function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
 
-/*variables*/
+/*variables incluidas*/
 
-
-
-
-
-        var latitud   = 10.9884292;
-        var longitud  = -74.8109141;
-        var mapZoom   = 15;
+        var lat   = 10.9884292;
+        var long  = -74.8109141;
+        var mapZoom   = 14;
 
 /*Fin variables entrada*/
-
+		var miub= new google.maps.LatLng(lat,long);
         var mapOptions = {
-          center: new google.maps.LatLng( latitud , longitud),
+          center: miub,
           zoom: mapZoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+		var miMarcador = new google.maps.Marker({
+      position: new google.maps.LatLng(lat,long),
+      map: map,
+      title: 'aqui!'
+  });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -160,24 +148,22 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 </style></head>
 
 <body>
-<p><input type=button onClick="loadworddoc();" value="Load">
-<p><textarea name=myarea cols=100 rows=25>nothing here yet</textarea>
+
 <div class="container">
   <div class="header"><a href="#"><img src="logo_main-unorte.png" alt="Insert Logo Here" name="Insert_logo" width="320" height="87" id="Insert_logo" style="background-color: #8090AB; display:block;" /></a> 
     <!-- end .header --></div>
-
   <div class="content">
-    <h1>Sistema de Geolocalización</h1>
-    <p>Néstor Bernal, Jhoyner Jordan, Gustavo Mejía.</p>
-    <p>&nbsp;</p>
-    <p>&nbsp; </p>
-    <h2>GPS    </h2>
-
-    <div id="map-canvas"></div>
-
+    <h1>Sistema de Geolocalización de un Vehiculo.</h1>
+    <p align="center">Diseño de un sistema de telemetría de un vehiculo, donde se monitorea la ubicación del vehiculo a través de un modem GPS referencia Syrus, y a su vez se muestra su posición mediante el uso de la API de Google Maps.</p>
+    <h2 align="center">Mapa de Ubicación.</h2>
+       
+    <div id="map-canvas">
+      <div align="center"></div>
+    </div>
   </div>
   <div class="footer">
     <p>Universidad del Norte, 2015. (C)</p>
+    <p>Nestor Bernal, Jhoyner Jordan &amp; Gustavo Martinez.</p>
   <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>

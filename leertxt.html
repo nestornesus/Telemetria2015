@@ -1,0 +1,23 @@
+<html>
+<head><title>DOC</title>
+<script language="JavaScript">
+<!--//
+function loadworddoc(){
+var doc = new ActiveXObject("Word.Application"); // creates the word object
+doc.Visible=false; // doesn't display Word window
+doc.Documents.Open("F:\\Users\\Gaurav Srivastava\\Desktop\\Pendrive Backup\\Test.txt"); // specify path to
+document
+//copy the content from my word document and throw it into my variable
+var txt;
+txt = doc.Documents("F:\\Users\\Gaurav Srivastava\\Desktop\\Pendrive Backup\\Test.txt").Content;
+document.all.myarea.value = txt;
+doc.quit(0); // quit word (very important or you'll quickly chew up memory!)
+}
+//-->
+</script>
+</head>
+<body>
+<p><input type=button onClick="loadworddoc();" value="Load">
+<p><textarea name=myarea cols=100 rows=25>nothing here yet</textarea>
+</body>
+</html>

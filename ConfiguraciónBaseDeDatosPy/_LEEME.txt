@@ -1,0 +1,22 @@
+﻿Esta carpeta esta destinada a la configuración de las bases de datos
+
+Objetivo:
+Crear la interacción del Sniffer con la base de datos, para ello se busca utilizar en connector de MySQL Python para crear
+y administrar la base de datos
+
+
+DEMO:
+Consta de 4 archivos: CreateConection.py, CreateTables.py, InsertData.py y QueryingData
+Estos archivos son DEMOS funcionables y realizan la interacción entre una base de datos llamada "employees" 
+a través de un usario denomidado "root"
+Como el nombre indica, cada archivo py realiza una parte del DEMO, no se ha testeado en otro equipo u otro sistema
+
+
+
+la Bibliografía de consulta es la siguiente
+
+> Chapter 5 Connector/Python Coding Examples:
+http://dev.mysql.com/doc/connector-python/en/connector-python-examples.html
+
+> Instalador de Connector/Python2.7
+http://dev.mysql.com/downloads/connector/python/

@@ -14,7 +14,7 @@ add_salary = ("INSERT INTO salaries "
               "(emp_no, salary, from_date, to_date) "
               "VALUES (%(emp_no)s, %(salary)s, %(from_date)s, %(to_date)s)")
 
-data_employee = ('Geert', 'Vanderkelen', tomorrow, 'M', date(1977, 6, 14))
+data_employee = ('Jhon', 'Smith', tomorrow, 'M', date(1990, 1, 6))
 
 # Insert new employee
 cursor.execute(add_employee, data_employee)

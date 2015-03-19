@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import mysql.connector, socket
 
-UDP_IP = "192.168.1.64"
+UDP_IP = "192.168.1.109"
 UDP_PORT = 1024
 MESSAGE = "SNIFFER EN PROGRESO"
 counter = 0

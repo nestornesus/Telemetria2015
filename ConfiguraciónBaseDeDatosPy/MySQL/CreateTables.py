@@ -9,16 +9,13 @@ TABLES = {}
 TABLES['GPS'] = (
 	"CREATE TABLE `Telemetria`.`GPS` ("
 	"`ID` INT NOT NULL AUTO_INCREMENT,"
-	"`Semana`  CHAR(4) NOT NULL,"
+	"`Fecha`  DATETIME NOT NULL,"
 	"`Día`  CHAR(1) NOT NULL,"
-	"`Hora`  CHAR(4) NOT NULL,"
 	"`Latitud`  CHAR(9) NOT NULL,"
 	"`Longitud`  CHAR(13) NOT NULL,"
 	"PRIMARY KEY (`ID`)"
 	");")
 	
-
-
 
 cnx = mysql.connector.connect(user='root')
 cursor = cnx.cursor()

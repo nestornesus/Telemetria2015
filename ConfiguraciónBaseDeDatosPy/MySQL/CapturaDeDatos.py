@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import mysql.connector, socket
 
-UDP_IP = "192.168.1.109"
+UDP_IP = "192.168.1.64"
 UDP_PORT = 1024
 MESSAGE = "SNIFFER EN PROGRESO"
 counter = 0
@@ -21,11 +21,17 @@ sock.bind((UDP_IP, UDP_PORT))
 while True:
     counter +=1
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes, format: XXXXXXsssssdhhhhMMMMmmmNNNnnnnn
-    week  = data[6:11]
-    day   = data[11:12]
-    time  = data[12:16]
+    Cmd1  = data[1:4]
+    Index = data[4:6]
+    week  = data[6:10]
+    day   = data[10]
+    time  = data[11:16]
     lati  = data[16:19] + '.' + data[19:24]
     longi = data[24:28] + '.' + data[28:33]
+    speed = data[33:36]
+    headi = data[36:39]
+    mode  = data[39]
+    age   = data[40]
 
     print ""
     print "//------Captura: ",counter
@@ -41,12 +47,15 @@ while True:
     cursor = cnx.cursor()
 	
     #Se hace la Syntaxis de destino
-    add_location = ("INSERT INTO gps "
-    		   "(Semana, Día, Hora, Latitud, Longitud) "
-    		   "VALUES (%s, %s, %s, %s, %s)")
+    
+
+    
+    add_location = ("insert into gps "
+                    "(Fecha,Día,Latitud, Longitud) "
+                    "value (concat(makedate(1980,%s*7-1+%s),' ',sec_to_time(%s)),dayname(19930110+%s),%s,%s)")
     
 	#SyntaxDataLocation
-    data_location = (week, day, time, lati, longi)
+    data_location = (week, day, time,day, lati, longi)
     
 	# Insert new location
     cursor.execute(add_location, data_location)

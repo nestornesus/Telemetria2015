@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 import mysql.connector, socket
+from urllib2 import urlopen
 
 UDP_IP = "192.168.1.64"
 UDP_PORT = 1024
 MESSAGE = "SNIFFER EN PROGRESO"
 counter = 0
+my_ip = urlopen('http://ip.42.pl/raw').read()
 
+print "Server IP:", my_ip
 print "UDP target IP:", UDP_IP
 print "UDP target port:", UDP_PORT
 print "message:", MESSAGE

@@ -55,7 +55,7 @@ while True:
     
     add_location = ("insert into gps "
                     "(Fecha,Día,Latitud, Longitud) "
-                    "value (concat(makedate(1980,%s*7-1+%s),' ',sec_to_time(%s)),dayname(19930110+%s),%s,%s)")
+                    "value (concat(makedate(1980,%s*7+%s+6),' ',sec_to_time(%s)),dayname(19930110+%s),%s,%s)")
     
 	#SyntaxDataLocation
     data_location = (week, day, time,day, lati, longi)

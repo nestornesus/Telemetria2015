@@ -1,7 +1,0 @@
->SRT;ALL<								#SET Reset;ALL;
->SXAID1<								#SET XAID 1 => set ID = 1(IMEI)
->SRFAinternet.movistar.com.co<			#SET RF A 	=> set radio frequency parameter, A(GPRS,APN) internet.movistar.co
->SXADP0402diseno2015a.ddns.net;1024<	#SET XADP 04 0 2 url;port => SET destinationPoint UDP withConsoleAccess withoutConfirmation url portListener
->SDA4;P10<								#SET DA 4; P10	=> join destinationPoint with destinationAddress10
->STD80060<								#SET TD 8 0060	=> set trigger time of signal 8 every 0060 seconds
->SED37NV4;TD8+<							#SET ED 37 

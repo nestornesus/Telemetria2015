@@ -1,0 +1,10 @@
+﻿Para cambiar el BitRate
+>SXABR9600<
+>SXABR115200<
+
+Tras revisar en la página, encontre que existe un programa llamado SyrusDesk
+https://support.digitalcomtech.com/syrus/syrus-desk/
+
+Sería un reemplazo para el HyperTerminal
+
+la una condición es  que esté programado en con 115200 en bitrate

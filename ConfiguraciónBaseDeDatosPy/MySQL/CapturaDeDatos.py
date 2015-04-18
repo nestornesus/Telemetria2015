@@ -46,22 +46,31 @@ while True:
     print "Longitud:", longi
 	
     #Acceso a la base de datos
-    cnx = mysql.connector.connect(user='root', database='telemetria')
+
+	
+    #cnx = mysql.connector.connect(user = 'root', password = '',
+    #                             host = 'localhost',
+    #                             database = 'tranlocmysqltestdb')
+
+    cnx = mysql.connector.connect(user = 'bfb33240729490', password = 'cb24cf9d',
+                                  host = 'us-cdbr-azure-southcentral-e.cloudapp.net',
+                                  database= 'tranlocmysqltestdb')
     cursor = cnx.cursor()
 	
     #Se hace la Syntaxis de destino
     
 
     
-    add_location = ("insert into gps "
-                    "(Fecha,Día,Latitud, Longitud) "
-                    "value (concat(makedate(1980,%s*7+%s+6),' ',sec_to_time(%s)),dayname(19930110+%s),%s,%s)")
+    add_location = ("insert into gps2 "
+                    "(Fecha,Latitud, Longitud) "
+                    "value (concat(makedate(1980,%s*7+%s+6),' ',sec_to_time(%s)),%s,%s)")
     
 	#SyntaxDataLocation
-    data_location = (week, day, time,day, lati, longi)
+    data_location = (week, day, time, lati, longi)
     
 	# Insert new location
     cursor.execute(add_location, data_location)
+    
     
 	# Make sure data is committed to the database
     cnx.commit()

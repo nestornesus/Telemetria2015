@@ -3,21 +3,25 @@ from __future__ import print_function
 import mysql.connector
 from mysql.connector import errorcode
 
-DB_NAME = 'Telemetria'
+DB_NAME = 'tranlocmysqltestdb'
 
 TABLES = {}
 TABLES['GPS'] = (
-	"CREATE TABLE `Telemetria`.`GPS` ("
+	"CREATE TABLE `tranlocmysqltestdb`.`GPS2` ("
 	"`ID` INT NOT NULL AUTO_INCREMENT,"
 	"`Fecha`  DATETIME NOT NULL,"
-	"`Día`  CHAR(1) NOT NULL,"
 	"`Latitud`  CHAR(9) NOT NULL,"
 	"`Longitud`  CHAR(13) NOT NULL,"
 	"PRIMARY KEY (`ID`)"
 	");")
 	
+#cnx = mysql.connector.connect(user = 'root', password = '',
+#                              host = 'localhost',
+#                              database = 'tranlocmysqltestdb')
 
-cnx = mysql.connector.connect(user='root')
+cnx = mysql.connector.connect(user = 'bfb33240729490', password = 'cb24cf9d',
+                              host = 'us-cdbr-azure-southcentral-e.cloudapp.net',
+                              database = 'tranlocmysqltestdb')
 cursor = cnx.cursor()
 
 def create_database(cursor):

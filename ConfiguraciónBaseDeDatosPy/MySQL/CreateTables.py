@@ -7,7 +7,7 @@ DB_NAME = 'tranlocmysqltestdb'
 
 TABLES = {}
 TABLES['GPS'] = (
-	"CREATE TABLE `tranlocmysqltestdb`.`GPS2` ("
+	"CREATE TABLE `tranlocmysqltestdb`.`GPS` ("
 	"`ID` INT NOT NULL AUTO_INCREMENT,"
 	"`Fecha`  DATETIME NOT NULL,"
 	"`Latitud`  CHAR(9) NOT NULL,"

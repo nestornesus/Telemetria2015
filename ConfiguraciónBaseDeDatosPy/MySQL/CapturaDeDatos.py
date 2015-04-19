@@ -61,7 +61,7 @@ while True:
     
 
     
-    add_location = ("insert into gps2 "
+    add_location = ("insert into gps "
                     "(Fecha,Latitud, Longitud) "
                     "value (concat(makedate(1980,%s*7+%s+6),' ',sec_to_time(%s)),%s,%s)")
     

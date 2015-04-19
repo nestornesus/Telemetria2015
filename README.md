@@ -2,12 +2,14 @@
 GPS, web, sniffer
 
 ### Páginas Importantes
-* [TranslocMysql] (http://tranlocmysqltest.azurewebsites.net/)
+* [TranlocMysql] (http://tranlocmysqltest.azurewebsites.net/)
 * [Transloctest (pagina vieja)] (http://transloctest.azurewebsites.net/)
+* [dirección de consulta] (http://noiptranlocmysql.ddns.net/)
 
 ### Referencias Web
 * [Corrección de AutoIncremento MySQL] (http://stackoverflow.com/questions/206751/mysql-autoincrement-column-jumps-by-10-why?answertab=votes#tab-top)
 * [Syntaxis README.md(Markdown)] (http://daringfireball.net/projects/markdown/basics)
+* [Pagina simple de mapas] (https://developers.google.com/maps/documentation/javascript/examples/map-simple?hl=es)
 
 __________________________________________________________________
 

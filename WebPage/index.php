@@ -87,7 +87,7 @@
 
     <div id="topbanner">
       <div class="container">
-        <h1 id="sitename"><a href="index.php">TransLoc</a> <span>Geolocalización Vehicular</span></h1>
+        <h1 id="sitename"><a href="index.php">TranLoc</a> <span>Geolocalización Vehicular</span></h1>
         <div id="mainnav">
           <ul>
             <li class="active"><a href="index.php">Geolocalización<span>En Tiempo Real</span></a></li>

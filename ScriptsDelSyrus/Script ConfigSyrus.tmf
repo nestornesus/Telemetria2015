@@ -2,12 +2,13 @@
 >SXADP**U<
 >SXAID1<									#SET XAID 1 		  => set ID = 1(IMEI)
 >SRFAinternet.movistar.com.co<				#SET RF A url 		  => set radio frequency parameter, A(GPRS,APN) internet.movistar.co
->SXADP040223.101.190.91;27<					#SET XADP 04 0 2 url;port => SET destinationPoint UDP withConsoleAccess withoutConfirmation url portListener
+>SXADP0402noiptranlocmyslq.ddns.net;1024<	#SET XADP 04 0 2 url;port => SET destinationPoint UDP withConsoleAccess withoutConfirmation url portListener
 >SXADP0001pegasus1.pegasusgateway.com;5000<
 >SDA4;P04,P00<								#SET DA 4; P04		  => join destinationAdress4 with destinationPoint04
 >STD80010<									#SET TD 8 0010		  => set trigger_Time_of_signal 8 every 0010 seconds
 >SED37NV4;TD8+<								#SET ED 37 N V 4; TD8 +	  => SET Event 37 Normal_configuration eVent_message_of_destination_adress 4; trigger_8 use_rising_edge
 
+#>SXADP0402noiptranlocmyslq.ddns.net;1024<
 #>SXADP040223.101.190.91;27<
 #>SXADP0402diseno2015a.ddns.net;1024<
 #>SXADP0402190.252.115.35;1024<

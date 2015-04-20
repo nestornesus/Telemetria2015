@@ -40,6 +40,10 @@
     </script>
 
     <script>
+
+      setTimeout(function () {
+       window.location.reload();
+      }, 10000);
       function toggletext(cid){
         if ( document.getElementById(cid).style.display == "none" ){
           document.getElementById(cid).style.display = "block";
@@ -51,18 +55,19 @@
       //var lat = [12, 14.23, 42.12];
       //var long = [-12, -14, -12];
       // functions below
-      var map;
+      
       //Make an array with the coordinates from the db
       function initialize() {
+        var map;
         var posicion= [];
         for (var i=0; i< lat.length; i++){
         posicion.push(new google.maps.LatLng(lat[i], long[i])); // Add the coordinates
         }
 
         var mapOptions = {  // Refresco guardar, Default
-          zoom: 20,
+          zoom: 18,
           center: posicion[lat.length-1],
-          mapTypeId: google.maps.MapTypeId.SATELLITE
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
         map = new google.maps.Map(document.getElementById('mainimg'), mapOptions);  // Render our map within the empty div
@@ -70,7 +75,8 @@
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
-          title: 'TransLoc'
+          icon:"http://maps.google.com/mapfiles/ms/micons/blue.png",
+          title: ''+fecha+''
         });
 
         var linea = new google.maps.Polyline({
@@ -125,7 +131,7 @@
             <div class="col1">
               <h2>Últimas Coordenadas: </h2>
               <h2><script>document.write(fecha);</script></h2>
-              <table width="444" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody>
                   <tr>
                     <td width="298" height="60"><table width="300" height="60" border="0" align="center">
@@ -150,51 +156,11 @@
             </div>
             <div class="col3">
               <h2>Localización en Tiempo Real </h2>
-              <p align="justify">Monitorea en tiempo real la ubicación de sus vehículos a través de un modem GPS referencia Syrus, y a su vez se muestra su posición mediante el uso de la API de Google Maps. Es ideal para que desde su computador o celular conozca con exactitud la localización de autos, camiones y mercancía. </p>
+              <p align="justify">Monitorea en tiempo real la ubicación de sus vehículos a través de un modem GPS referencia Syrus, y a su vez se muestra su posición mediante el uso de Google Maps. </p>
             </div>
             <div class="clear"></div>
           </div>
           <div class="clear bordered"></div>
-          <div id="page">
-            <h2 class="subhead"><span>Últimas entradas de la Bitácora</span></h2>
-            <div class="post">
-              <div class="posthead">
-                <p class="date">Abril 06, 2015</p>
-                <h3><a href="bitacora.php">Proyecto No.2, Bitácora No.3</a></h3>
-                <p class="postmeta">Por Grupo 02 </p>
-              </div>
-              <p align="justify">Para esta tercera etapa fue necesario realizar la consulta con el fabricante (DCT) del modem Syrus para corregir el error del envío de la localización GPS. Ellos realizaron pruebas y ajustes remotamente, y al final con ayuda conjunta de nosotros se realizaron las últimas configuraciones y se corrigió el error que se venía presentando. <a href="bitacora.php">Leer más</a></p>
-            </div>
-            <div class="post">
-              <div class="posthead">
-                <p class="date">Marzo 16, 2015</p>
-                <h3><a href="bitacora2.php">Proyecto No.2, Bitácora No.2</a></h3>
-                <p class="postmeta">Por Grupo 02</p>
-              </div>
-              <p align="justify">Inicialmente, se hizo posible exportar la adquisición de coordenadas del Sniffer previamente implementado a una base de datos creada por medio de MySQL, evitado así el uso de un archivo de texto plano (.txt) para el almacenamiento y manejo de las coordenadas obtenidas. <a href="bitacora2.php">Leer más</a></p>
-            </div>
-            <div class="post">
-              <div class="posthead">
-                <p class="date">Marzo 09, 2015</p>
-                <h3><a href="bitacora3.php">Proyecto No.2, Bitácora No.1</a></h3>
-                <p class="postmeta">Por Grupo 02 </p>
-              </div>
-              <p align="justify">A partir de la culminación del primer proyecto, el cual consistió en adquirir las coordenadas de un modem GPS (Syrus) y enviarlas a un servidor para su correcta visualización en una cartografía mediante una página web, lo que se procede a desarrollar es una página web en donde se pueda consultar el recorrido realizado del vehículo, así mismo como la consulta de un historial de ubicación teniendo en cuenta la fecha y hora en la que el vehículo transitó. <a href="bitacora3.php">Leer más</a></p>
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <h2>Últimas Entradas</h2>
-            <ul class="posts">
-              <li><a href="bitacora.php">Proyecto No.2, Bitácora No.3</a> <span>06/04/2015 </span></li>
-              <li><a href="bitacora2.php">Proyecto No.2, Bitácora No.2</a> <span>16/03/2015 </span></li>
-              <li><a href="bitacora3.php">Proyecto No.2, Bitácora No.1</a> <span>09/03/2015 </span></li>
-              <li><a href="bitacora4.php">Proyecto No.1, Bitácora No.3</a> <span>23/02/2015 </span></li>
-              <li><a href="bitacora5.php">Proyecto No.1, Bitácora No.2</a> <span>16/02/2015 </span></li>
-              <li><a href="bitacora6.php">Proyecto No.1, Bitácora No.1</a> <span>09/02/2015 </span></li>
-            </ul>
-          </div>
-
           <div class="clear"></div>
         </div>
       </div>
